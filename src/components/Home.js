@@ -14,12 +14,12 @@ export default class Home extends Component {
 
                 New Invoice
 
-      -- No invoices -->
+
                 There is nothing here
                 Create an invoice by clicking the New Invoice button and get started
-      -- No invoices end -->
 
-      -- Create new invoice form -->
+
+
                 Go back
 
                 New Invoice
