@@ -3,7 +3,8 @@ import {
     getAllInvoices,
     getInvoicesWithID,
     updateInvoice,
-    deleteInvoice
+    deleteInvoice,
+    deleteAllInvoice,
 } from '../controllers/invoceController'
 
 import {
@@ -31,7 +32,13 @@ const routes = (app) => {
             console.log('Request de type : ' + req.method);
             next();
         }, getAllInvoices)
-        .post(addNewInvoice);
+        .post((req, res, next) => {
+            //middleware
+            console.log('POST request');
+            console.log('Request de type : ' + req.method);
+            next();
+        }, addNewInvoice)
+        .delete(deleteAllInvoice);
 
     app.route('/invoice/:invoiceID')
         .get(getInvoicesWithID)

@@ -53,3 +53,13 @@ export const deleteInvoice = (req, res) => {
         }
     });
 };
+
+export const deleteAllInvoice = (req, res) => {
+    Invoice.remove({}, (err, invoice) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.json({ message: 'Toutes les factures on ete supprimées' });
+        }
+    });
+};

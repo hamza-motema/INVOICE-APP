@@ -6,15 +6,15 @@ const Schema = mongoose.Schema
 export const InvoiceSchema = new Schema({
     description: {
         type: String,
-        required: 'Entrer une description'
+        //required: 'Entrer une description'
     },
     paymentTerms: {
         type: Number,
-        required: 'Entrer le nombre de jours'
+        //required: 'Entrer le nombre de jours'
     },
     status: {
         type: Boolean,
-        required: 'Entrer le status'
+        //required: 'Entrer le status'
     },
     total: {
         type: Number,
@@ -25,11 +25,11 @@ export const InvoiceSchema = new Schema({
     },
     itemList: {
         type: Array,
-        required: 'Entrer la liste des items'
+        //required: 'Entrer la liste des items'
     },
     paymentDue: {
         type: Date,
-        required: 'Entrer la date du paiement'
+        //required: 'Entrer la date du paiement'
     },
 });
 
