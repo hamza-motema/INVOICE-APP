@@ -21,13 +21,16 @@ export default class Home extends Component {
     handleSubmit(event) {
 
 
-
+        event.preventDefault();
         try {
             let response = fetch('http://localhost:3000/invoice', {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-                credentials: 'same-origin', // include, *same-origin, omit
+                method: 'POST',
+                headers: {
+                    'tenantid': '1',
+                    'Content-Type': 'application/json',
+                    'language': '0',
+
+                },
                 body: JSON.stringify({
 
                     total: 4071,
@@ -35,8 +38,8 @@ export default class Home extends Component {
 
                 })
             })
-
-            console.log("This is response" + response)
+            let json = response.json();
+            console.log("This is response" + json)
         } catch (error) {
             this.setState({ errorMessage: error })
             console.log("This is error" + error)
